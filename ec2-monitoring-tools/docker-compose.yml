@@ -1,0 +1,28 @@
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    #networks:
+    #  - monitoring
+    network_mode: "host"
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+        #networks:
+        # - monitoring
+    depends_on:
+      - prometheus
+    network_mode: "host"
+
+networks:
+  monitoring:
+    driver: bridge

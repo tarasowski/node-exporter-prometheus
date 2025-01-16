@@ -1,0 +1,7 @@
+services:
+  node_exporter:
+    image: prom/node-exporter
+    container_name: node_exporter
+      #ports:
+      #  - "9100:9100"  # Mapped port 9100 vom Container auf den Host
+    network_mode: "host"  # Wichtig: Nutze das Netzwerk des Hosts
