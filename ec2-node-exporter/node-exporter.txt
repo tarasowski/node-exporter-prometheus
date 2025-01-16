@@ -2,3 +2,4 @@ wget https://github.com/prometheus/node_exporter/releases/download/v1.8.2/node_e
 tar -xvzf node_exporter-1.8.2.linux-amd64.tar.gz
 cd node_exporter-1.8.2.linux-amd64
 chmod +x node_exporter
+./node_exporter
