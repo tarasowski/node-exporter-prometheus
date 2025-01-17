@@ -26,4 +26,22 @@
 3. In Grafana:
    - Add Prometheus as a data source with the URL `http://localhost:9090`.
    - Create a new dashboard by either importing it from Grafana Dashboards or by using the dashboard ID: `1860`.
+  
+
+## 4. Run a stress test
+
+```
+# Aktualisiere die Paketlisten
+sudo apt-get update
+
+# Installiere stress-ng (empfohlen für vielseitigere Tests)
+sudo apt-get install stress-ng
+
+# Stress mit nur 1 CPU für 60 Sekunden (bei Free Tier Instanzen)
+stress-ng --cpu 1 --timeout 60s
+
+# Teste den Arbeitsspeicher mit einer kleinen Menge (z. B. 256 MB)
+stress-ng --vm 1 --vm-bytes 256M --timeout 60s
+
+``` 
 
