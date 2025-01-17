@@ -38,10 +38,11 @@ sudo apt-get update
 sudo apt-get install stress-ng
 
 # Stress mit nur 1 CPU für 60 Sekunden (bei Free Tier Instanzen)
-stress-ng --cpu 1 --timeout 60s
+nohup stress-ng --cpu 1 --timeout 1m --verbose > /dev/null 2>&1 &
+
 
 # Teste den Arbeitsspeicher mit einer kleinen Menge (z. B. 256 MB)
-stress-ng --vm 1 --vm-bytes 256M --timeout 60s
+nohup stress-ng --vm 1 --vm-bytes 256M --timeout 60s > /dev/null 2>&1 &
 
 ``` 
 
