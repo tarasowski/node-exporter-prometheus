@@ -6,6 +6,7 @@ services:
     #  - "9090:9090"
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+       - ./alerts.yml:/etc/prometheus/alerts.yml
     #networks:
     #  - monitoring
     network_mode: "host"
